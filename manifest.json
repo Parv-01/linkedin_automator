@@ -1,29 +1,32 @@
 {
-    "manifest_version": 2,
-    "name": "LinkedIn Job Automator",
-    "version": "1.0",
-    "description": "Automatically apply to job listings on LinkedIn and email HR.",
-    "permissions": [
-      "activeTab",
-      "storage",
-      "https://www.linkedin.com/*"
-    ],
-    "background": {
-      "scripts": ["background.js"]
-    },
-    "browser_action": {
-      "default_popup": "popup.html",
-      "default_icon": "icons/icon.png"
-    },
-    "content_scripts": [
-      {
-        "matches": ["https://www.linkedin.com/jobs/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "web_accessible_resources": [
-      "popup.css",
-      "popup.js"
-    ]
-  }
-  
+  "manifest_version": 2,
+  "name": "LinkedIn Job Application Automator",
+  "version": "1.0",
+  "description": "Automatically apply to job listings on LinkedIn.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "https://www.linkedin.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/jobs/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "popup.css",
+    "popup.js"
+  ]
+}
